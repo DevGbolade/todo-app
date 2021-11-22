@@ -1,0 +1,12 @@
+<form action="">
+  <div class="w-100">
+    <input
+      type="text"
+      class="form-control mr-3"
+      (input)="onSearch()"
+      [(ngModel)]="search"
+      placeholder="Search"
+      [ngModelOptions]="{ standalone: true }"
+    />
+  </div>
+</form>

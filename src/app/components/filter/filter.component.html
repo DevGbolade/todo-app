@@ -1,0 +1,15 @@
+<form action="">
+  <div class="ml-2">
+    <select
+      class="form-control"
+      [(ngModel)]="option"
+      [ngModelOptions]="{ standalone: true }"
+      (ngModelChange)="onFilter($event)"
+    >
+      <option value="default">Filter by</option>
+      <option value="all">All</option>
+      <option value="active">Active</option>
+      <option value="completed">Completed</option>
+    </select>
+  </div>
+</form>
