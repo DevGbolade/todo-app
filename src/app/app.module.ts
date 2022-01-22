@@ -11,10 +11,12 @@ import { TableComponent } from './components/table/table.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TasksService } from './services/tasks.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterComponent } from './components/filter/filter.component';
+import { AuthInterceptor } from './shared/authconfig-interceptor';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,17 @@ import { FilterComponent } from './components/filter/filter.component';
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule
 
   ],
-  providers: [TasksService],
+  providers: [
+    TasksService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

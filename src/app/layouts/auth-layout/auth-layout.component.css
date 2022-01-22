@@ -1,0 +1,33 @@
+.leftCol {
+  display: flex;
+  align-items: center;
+  background-image: url("/assets/images/auth_banner.png");
+  background-size: cover;
+  min-height: 100vh;
+  justify-content: right;
+}
+.rectangle {
+  width: 100px;
+  height: 480px;
+  border: 1px solid #ffd70d;
+  background-color: #ffd70d;
+  margin-right: -50px;
+}
+.blueScreen {
+  position: relative;
+}
+#rightCol {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("/assets/images/auth_watermark.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left;
+}
+.supportMail {
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+p {
+  text-align: right;
+}

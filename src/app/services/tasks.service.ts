@@ -51,13 +51,16 @@ export class TasksService {
   }
 
   updateTask(task: ITask): Observable<ITask> {
+    console.log('called!');
+
     const { completed, name, isActive } = task;
     const url = `${this.apiUrl}/${task.id}`;
-    return this.http.put<ITask>(url, { name, completed, isActive }, httpOptions).pipe(
-      tap(() => {
-        this.getReloadedNeeded.next();
-      })
-    );
+    return this.http.put<ITask>(url, { name, completed, isActive }, httpOptions)
+    // .pipe(
+    //   tap(() => {
+    //     this.getReloadedNeeded.next();
+    //   })
+    // );
   }
 
   addTask(task: ITask): Observable<ITask> {

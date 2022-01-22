@@ -5,7 +5,7 @@ import { TasksService } from 'src/app/services/tasks.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
@@ -13,9 +13,7 @@ export class TableComponent implements OnInit {
   @Output() onDeleteTask: EventEmitter<ITask> = new EventEmitter();
   @Output() onEditTask = new EventEmitter();
   constructor(private tasksService: TasksService) {
-    this.isChecked = false
   }
-  isChecked: boolean;
   ngOnInit(): void {
   }
 

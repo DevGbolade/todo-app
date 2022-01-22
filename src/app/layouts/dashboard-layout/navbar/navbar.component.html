@@ -1,0 +1,86 @@
+<div class="row px-lg-5">
+  <div class="nav_content d-flex justify-content-between align-items-center">
+    <button type="button " class="sidebarToggler d-lg-none" id="sidebarToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <img
+      src="/assets/images/auth_logo.png"
+      [routerLink]="['/dashboard']"
+      alt="Nav logo"
+      class="nav_logo"
+    />
+    <div class="d-none d-md-block">
+      <span class="d-sm-none toggle_icon" (click)="onToggleSearch()">
+        <span *ngIf="toggleSearch; else searchIcon">
+          <i class="fas fa-times"></i>
+        </span>
+        <ng-template #searchIcon>
+          <span>
+            <i class="fas fa-search"></i>
+          </span>
+        </ng-template>
+      </span>
+      <div class="search_box" [ngClass]="{ toggleSearchBox: toggleSearch }">
+        <form class="d-md-flex">
+          <input
+            type="text"
+            placeholder="Number, Name, Certificate Number, Product Number"
+            class="form-control"
+          />
+          <button
+            type="button"
+            class="btn btn-primary d-none d-md-block ms-md-2"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="user_info d-flex justify-content-between align-items-center">
+      <div class="dropdown">
+        <img
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          src="/assets/images/user_avatar.jpg"
+          alt="Profile image"
+          class="profile_img me-md-3"
+          (click)="displayProfile()"
+        />
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li class="d-md-none dropdown-item bg-primary" href="#">
+            <b>{{ name }}</b>
+          </li>
+          <li class="dropdown-item" href="#">
+            <a class="dropdown-item-link" href="#">Profile</a>
+          </li>
+          <li class="d-md-none dropdown-item" href="#">
+            <a class="dropdown-item-link" href="#">Account Settings</a>
+          </li>
+          <button (click)="logout()" class="dropdown-item" href="#">
+            Logout
+          </button>
+        </ul>
+      </div>
+      <div class="user_details d-none d-md-block">
+        <p class="user_name mb-0">
+          {{ formatName() }}
+        </p>
+        <p class="user_account_settings mb-0" (click)="displayProfile()">
+          Account Settings
+        </p>
+      </div>
+    </div>
+  </div>
+  <ng-template #popContent>
+    <p>admin@botosoft.net</p>
+    <hr />
+    <button (click)="logout()" class="btn btn-primary btn-sm">
+      <div>Logout</div>
+    </button>
+  </ng-template>
+
+  <ng-template #popTitle>
+    <b>Tobi</b>
+  </ng-template>
+</div>

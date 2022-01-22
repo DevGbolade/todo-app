@@ -1,0 +1,275 @@
+<div class="sidebar-contents">
+  <div class="navClose">
+    <div class="navList mb-0 d-none d-lg-block">
+      <button
+        id="sidebarToggleLG"
+        type="button"
+        class="btn shadow-none navLink py-3 px-3"
+        title="Toggle Sidebar"
+      >
+        <span class="navIcon close_btn ms-1"><i class="fas fa-times"></i></span>
+        <p class="navText mb-0">collapse</p>
+      </button>
+    </div>
+  </div>
+  <div class="navMenu">
+    <div class="navList text-center">
+      <a
+        href="#"
+        class="navLink nav_toggler py-3 px-3"
+        title="Dashboard"
+        [routerLink]="['/dashboard']"
+        [routerLinkActive]="'navListActive'"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <svg-icon
+          src="/assets/icons/sidebar/home_icon.svg"
+          class="ms-1 navIcon"
+        ></svg-icon>
+
+        <p class="navText mb-0">Dashboard</p></a
+      >
+    </div>
+
+    <div class="navList text-center">
+      <a
+        href="#"
+        class="navLink nav_toggler py-3 px-3"
+        [routerLink]="['/dashboard/finance']"
+        [routerLinkActive]="'navListActive'"
+        [routerLinkActiveOptions]="{ exact: true }"
+        title="Finance"
+      >
+        <svg-icon
+          src="/assets/icons/sidebar/finance_icon.svg"
+          class="ms-1 navIcon"
+        ></svg-icon>
+        <p class="navText mb-0">Finance</p></a
+      >
+    </div>
+
+    <!-- Support part -->
+    <div class="navList text-center" [routerLinkActive]="'navListActive'">
+      <button
+        class="btn shadow-none dropdownlink py-3 px-3"
+        data-bs-toggle="collapse"
+        data-bs-target="#support-collapse"
+        aria-expanded="true"
+        title="Support"
+      >
+        <svg-icon
+          src="/assets/icons/sidebar/support_icon.svg"
+          class="ms-1 navIcon"
+          [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+        ></svg-icon>
+        <p class="navText mb-0">Support</p>
+      </button>
+
+      <div class="collapse" id="support-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pt-3 pb-1 small">
+          <li class="mb-3">
+            <a
+              [routerLinkActive]="'collapsedLinkActive'"
+              data-bs-toggle="collapse"
+              data-bs-target="#ticket-collapse"
+              aria-expanded="true"
+              href="#"
+              class="collapsedLinks px-3 text-decoration-none"
+              title="Tickets"
+            >
+              <svg-icon
+                src="/assets/icons/sidebar/ticket_icon.svg"
+                class="ms-2 collapseIcon"
+                [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+              ></svg-icon>
+              <span class=""> Tickets </span>
+              <i class="fas fa-chevron-down arrow_down"></i
+            ></a>
+            <!-- Ticket DropDown -->
+            <div class="collapse innerList" id="ticket-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal py-2 small">
+                <li class="mt-2">
+                  <a
+                    title="Ticket Dashboard"
+                    href="#"
+                    class="collapsedLinks innerCollapsedLink text-decoration-none"
+                    [routerLink]="['/dashboard/tickets']"
+                    [routerLinkActive]="'innerCollapsedLinkActive'"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a
+                    title="My Tickets"
+                    href="#"
+                    class="collapsedLinks innerCollapsedLink text-decoration-none"
+                    [routerLink]="['/dashboard/tickets/list']"
+                    [routerLinkActive]="'innerCollapsedLinkActive'"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >My tickets</a
+                  >
+                </li>
+                <li class="mt-2">
+                  <a
+                    title="Ticket Setup"
+                    href="#"
+                    class="collapsedLinks innerCollapsedLink text-decoration-none"
+                    [routerLink]="['/dashboard/tickets/setup']"
+                    [routerLinkActive]="'innerCollapsedLinkActive'"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    >Setup</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-3">
+            <a
+              href="#"
+              class="collapsedLinks nav_toggler px-3 text-decoration-none"
+              [routerLinkActive]="'collapsedLinkActive'"
+              [routerLink]="['/dashboard/faq/all']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              title="Faqs"
+            >
+              <svg-icon
+                src="/assets/icons/sidebar/ticket_icon.svg"
+                class="ms-2 collapseIcon"
+                [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+              ></svg-icon>
+              <span class=""> faqs </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End of Support -->
+    <div class="navList text-center">
+      <a
+        href="#"
+        class="navLink nav_toggler py-3 px-3"
+        [routerLink]="['/dashboard/legal/all']"
+        [routerLinkActive]="'navListActive'"
+        [routerLinkActiveOptions]="{ exact: true }"
+        title="Legal"
+      >
+        <svg-icon
+          src="/assets/icons/sidebar/legal_icon.svg"
+          class="ms-1 navIcon"
+          [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+        ></svg-icon>
+
+        <p class="navText mb-0">Legal</p></a
+      >
+    </div>
+    <div class="navList text-center">
+      <a
+        href="#"
+        class="navLink py-3 px-3 nav_toggler"
+        [routerLink]="['/dashboard/users']"
+        [routerLinkActive]="'navListActive'"
+        [routerLinkActiveOptions]="{ exact: true }"
+        title="Users"
+      >
+        <svg-icon
+          src="/assets/icons/sidebar/users_icon.svg"
+          class="ms-1 navIcon"
+          [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+        ></svg-icon>
+        <p class="navText mb-0">Users</p></a
+      >
+    </div>
+    <div class="navList text-center">
+      <a
+        href="#"
+        class="navLink py-3 px-3 nav_toggler"
+        [routerLink]="['/dashboard/candidates']"
+        [routerLinkActive]="'navListActive'"
+        [routerLinkActiveOptions]="{ exact: true }"
+        title="Candidates"
+      >
+        <svg-icon
+          src="/assets/icons/sidebar/users_icon.svg"
+          class="ms-1 navIcon"
+          [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+        ></svg-icon>
+        <p class="navText mb-0">Candidates</p></a
+      >
+    </div>
+    <!-- Setings Part -->
+    <div class="navList text-center" [routerLinkActive]="'navListActive'">
+      <button
+        class="btn shadow-none dropdownlink py-3 px-3"
+        data-bs-toggle="collapse"
+        data-bs-target="#settings-collapse"
+        aria-expanded="true"
+        title="Settings"
+      >
+        <svg-icon
+          src="/assets/icons/sidebar/settings_icon.svg"
+          class="ms-1 navIcon"
+          [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+        ></svg-icon>
+        <p class="navText mb-0">Settings</p>
+      </button>
+
+      <div class="collapse" id="settings-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pt-3 pb-1 small">
+          <li class="mb-3">
+            <a
+              href="#"
+              class="collapsedLinks nav_toggler px-3 text-decoration-none"
+              [routerLinkActive]="'collapsedLinkActive'"
+              [routerLink]="['/dashboard/examination-management']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              title="Exam Management"
+            >
+              <svg-icon
+                src="/assets/icons/sidebar/ticket_icon.svg"
+                class="ms-2 collapseIcon"
+                [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+              ></svg-icon>
+              <span class=""> Exam Management </span>
+            </a>
+          </li>
+          <li class="mb-3">
+            <a
+              href="#"
+              class="collapsedLinks nav_toggler px-3 text-decoration-none"
+              [routerLinkActive]="'collapsedLinkActive'"
+              [routerLink]="['/dashboard/user-management']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              title="User Management"
+            >
+              <svg-icon
+                src="/assets/icons/sidebar/ticket_icon.svg"
+                class="ms-2 collapseIcon"
+                [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+              ></svg-icon>
+              <span class=""> User Management </span>
+            </a>
+          </li>
+          <li class="mb-3">
+            <a
+              href="#"
+              class="collapsedLinks nav_toggler px-3 text-decoration-none"
+              [routerLinkActive]="'collapsedLinkActive'"
+              [routerLink]="['/dashboard/wallet-management']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              title="Wallet Management"
+            >
+              <svg-icon
+                src="/assets/icons/sidebar/ticket_icon.svg"
+                class="ms-2 collapseIcon"
+                [svgStyle]="{ 'width.px': 20.8, 'height.px': 17.68 }"
+              ></svg-icon>
+              <span class=""> Wallet Management </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Of Settings  -->
+  </div>
+</div>

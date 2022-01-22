@@ -1,0 +1,101 @@
+.nav_content {
+  height: 68px;
+}
+.sidebarToggler {
+  background: none;
+  outline: none;
+  border: 0;
+  color: #000148;
+}
+.nav_logo {
+  width: 120px;
+  cursor: pointer;
+}
+.user_details {
+  cursor: pointer;
+}
+.profile_img {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 2px 4px 9px #66636329;
+}
+.user_name {
+  color: #000148;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  font-size: 0.7rem;
+}
+.user_account_settings {
+  font-size: 0.7rem;
+  color: #222121;
+  opacity: 0.65;
+}
+.user_account_settings:hover {
+  text-decoration: underline;
+}
+.search_box {
+  display: none;
+  width: 17rem;
+}
+
+.toggle_icon {
+  color: #000148;
+}
+
+.toggleSearchBox {
+  display: block;
+}
+@media screen and (max-width: 576px) {
+  .search_box {
+    position: absolute;
+    left: 50%;
+    top: 4.5rem;
+    transform: translateX(-50%);
+  }
+}
+@media screen and (min-width: 576px) {
+  .search_box {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav_content {
+    height: 80px;
+  }
+  .nav_logo {
+    width: 150px;
+  }
+  .profile_img {
+    width: 40px;
+    height: 40px;
+  }
+  .submit_btn {
+    padding: 0.1rem 1.5rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .nav_content {
+    height: 130px;
+  }
+  .nav_logo {
+    width: 200px;
+  }
+  .search_box {
+    width: 20rem;
+  }
+
+  .user_name {
+    font-size: 0.9rem;
+  }
+  .user_account_settings {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .search_box {
+    width: 23rem;
+  }
+}
